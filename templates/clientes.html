@@ -33,6 +33,10 @@
       <td><a href="{{ url_for('cliente_detalhes', cliente_id=c[0]) }}">{{ c[1] }}</a></td>
       <td>{{ c[2] }}</td>
       <td>{{ c[3] }}</td>
+      <td>
+          <a href="/clientes/{{ c[0] }}/editar" class="btn btn-sm btn-warning">✏️ Editar</a>
+          <a href="/clientes/{{ c[0] }}/excluir" class="btn btn-sm btn-danger" onclick="return confirm('Deseja excluir este cliente?')">🗑️ Excluir</a>
+      </td>
     </tr>
     {% endfor %}
   </tbody>
