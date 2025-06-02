@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Editar Cliente{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Editar Cliente</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nome:</label>
+            <input type="text" class="form-control" name="nome" value="{{ cliente[1] }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control" name="email" value="{{ cliente[2] }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Telefone:</label>
+            <input type="text" class="form-control" name="telefone" value="{{ cliente[3] }}">
+        </div>
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="/clientes" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
