@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Detalhes do Cliente</h2>
+<ul class="list-group">
+  <li class="list-group-item"><strong>ID:</strong> {{ cliente[0] }}</li>
+  <li class="list-group-item"><strong>Nome:</strong> {{ cliente[1] }}</li>
+  <li class="list-group-item"><strong>Email:</strong> {{ cliente[2] }}</li>
+  <li class="list-group-item"><strong>Telefone:</strong> {{ cliente[3] }}</li>
+</ul>
+<a href="{{ url_for('clientes') }}" class="btn btn-secondary mt-3">Voltar</a>
+{% endblock %}

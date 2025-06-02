@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Sistema de Controle de Vendas</h1>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <a href="/clientes" class="btn btn-primary w-100 p-4">
+                👥 Gerenciar Clientes
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/produtos" class="btn btn-success w-100 p-4">
+                📦 Gerenciar Produtos
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/vendas" class="btn btn-warning w-100 p-4">
+                💰 Registrar Vendas
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/relatorios" class="btn btn-info w-100 p-4">
+                📊 Relatórios
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/cobrancas_mes" class="btn btn-danger w-100 p-4">
+                📆 Cobranças do Mês
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

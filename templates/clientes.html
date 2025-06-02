@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Clientes</h2>
+
+<form action="{{ url_for('novo_cliente') }}" method="POST" class="mb-4 row g-2">
+  <div class="col-md-4">
+    <input type="text" name="nome" placeholder="Nome" class="form-control" required>
+  </div>
+  <div class="col-md-3">
+    <input type="email" name="email" placeholder="Email" class="form-control">
+  </div>
+  <div class="col-md-3">
+    <input type="text" name="telefone" placeholder="Telefone" class="form-control">
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary w-100">Adicionar</button>
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in clientes %}
+    <tr>
+      <td>{{ c[0] }}</td>
+      <td><a href="{{ url_for('cliente_detalhes', cliente_id=c[0]) }}">{{ c[1] }}</a></td>
+      <td>{{ c[2] }}</td>
+      <td>{{ c[3] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Voltar</a>
+{% endblock %}
